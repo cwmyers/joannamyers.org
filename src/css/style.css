@@ -85,6 +85,51 @@ body {
 	text-underline-offset: 0.3em;
 }
 
+/* ---------- About / portrait ---------- */
+
+.about {
+	display: grid;
+	grid-template-columns: minmax(220px, 300px) 1fr;
+	gap: 2.5rem;
+	align-items: start;
+	padding: 3rem 0;
+}
+
+.about-portrait {
+	margin: 0;
+}
+
+.about-portrait img {
+	width: 100%;
+	height: auto;
+	border-radius: 12px;
+	box-shadow: 0 10px 30px rgba(45, 42, 38, 0.15);
+	display: block;
+}
+
+.about-text .page-title { margin-top: 0; }
+.about-text .prose { padding-bottom: 3rem; }
+
+@media (max-width: 640px) {
+	.about {
+		grid-template-columns: 1fr;
+		gap: 1.75rem;
+		padding: 2rem 0;
+	}
+	.about-portrait { max-width: 320px; margin: 0 auto; }
+}
+
+.hero-avatar {
+	display: block;
+	width: 130px;
+	height: 130px;
+	object-fit: cover;
+	object-position: 50% 22%;
+	border-radius: 50%;
+	margin: 0 auto 1.25rem;
+	box-shadow: 0 0 0 4px var(--surface), 0 0 0 6px var(--accent-soft), 0 8px 24px rgba(45, 42, 38, 0.12);
+}
+
 /* ---------- Home ---------- */
 
 .hero { text-align: center; padding: 3.5rem 0 1rem; }

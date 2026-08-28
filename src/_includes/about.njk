@@ -1,0 +1,14 @@
+---
+layout: base.njk
+---
+<article class="about">
+	<figure class="about-portrait">
+		<img src="{{ "/images/portrait.jpeg" | url }}" alt="A portrait of Joanna Myers" width="800" height="1066">
+	</figure>
+	<div class="about-text">
+		<h1 class="page-title">{{ title }}</h1>
+		<div class="prose">
+			{{ content | safe }}
+		</div>
+	</div>
+</article>
