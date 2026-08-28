@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: OWNER/REPO            # ← set to e.g. chris/joannamyers.org
+  repo: cwmyers/joannamyers.org
   branch: main
   # PKCE authentication: no server or secret needed.
   # Create a GitHub OAuth App (see README) and paste its Client ID here:
