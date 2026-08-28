@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: Home
+permalink: /
+---
+
+<section class="hero">
+	<p class="hero-kicker">Welcome</p>
+	<h1 class="hero-title">Colours of my life</h1>
+	<p class="hero-sub">{{ site.description }}</p>
+</section>
+
+<section class="recent">
+	<h2 class="section-title">Latest posts</h2>
+	<div class="post-list">
+		{% for post in collections.posts | newestFirst | head(8) %}
+		<a class="post-card" href="{{ post.url }}">
+			<time datetime="{{ post.date | iso }}">{{ post.date | dateFmt }}</time>
+			<h3>{{ post.data.title }}</h3>
+			<p>{{ post.data.description }}</p>
+			<span class="read-more">Read post →</span>
+		</a>
+		{% endfor %}
+	</div>
+	<p class="more-link"><a href="/archive/">Browse the full archive →</a></p>
+</section>

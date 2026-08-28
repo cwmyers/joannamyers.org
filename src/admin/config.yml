@@ -1,0 +1,62 @@
+backend:
+  name: github
+  repo: OWNER/REPO            # ← set to e.g. chris/joannamyers.org
+  branch: main
+  # PKCE authentication: no server or secret needed.
+  # Create a GitHub OAuth App (see README) and paste its Client ID here:
+  app_id: REPLACE_WITH_OAUTH_APP_CLIENT_ID
+
+locale: en
+site_url: https://www.joannamyers.org
+logo_url: https://www.joannamyers.org/favicon.svg
+
+media_folder: src/images
+public_folder: /images
+
+collections:
+  - name: posts
+    label: Blog Posts
+    label_singular: Post
+    folder: src/posts
+    create: true
+    format: md
+    extension: md
+    slug: "{{fields.title | slugify}}"
+    summary: "{{title}} — {{date | date('DD MMM YYYY')}}"
+    sortable_fields: [date, title]
+    view_filters:
+      - label: Posts with images
+        field: image
+        pattern: [".+"]
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish date
+        name: date
+        widget: datetime
+        date_format: YYYY-MM-DD
+        time_format: false
+        format: YYYY-MM-DD
+        default_date: "{{now}}"
+        required: false
+      - label: Categories
+        name: tags
+        widget: list
+        required: false
+        add_label: Add category
+        default: []
+      - label: Body
+        name: body
+        widget: markdown
+
+  - name: pages
+    label: Pages
+    files:
+      - label: About page
+        name: about
+        file: src/about.md
+        fields:
+          - label: Body
+            name: body
+            widget: markdown
