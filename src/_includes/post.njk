@@ -21,7 +21,7 @@ layout: base.njk
 	<nav class="post-nav">
 		{% set prev = collections.posts | newestFirst | previousItem(page) %}
 		{% set next = collections.posts | newestFirst | nextItem(page) %}
-		{% if prev %}<a class="prev" href="{{ prev.url }}">&larr; {{ prev.data.title }}</a>{% endif %}
-		{% if next %}<a class="next" href="{{ next.url }}">{{ next.data.title }} &rarr;</a>{% endif %}
+		{% if prev %}<a class="prev" href="{{ prev.url | url }}">&larr; {{ prev.data.title }}</a>{% endif %}
+		{% if next %}<a class="next" href="{{ next.url | url }}">{{ next.data.title }} &rarr;</a>{% endif %}
 	</nav>
 </article>

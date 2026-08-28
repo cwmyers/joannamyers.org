@@ -12,5 +12,5 @@ and excitement — and through all of it, faith gives colour to every season.
 I write to process, to remember, and to encourage anyone walking a similar
 road.
 
-The easiest way to follow along is the [RSS feed](/feed.xml), or just drop
+The easiest way to follow along is the [RSS feed]({{ "/feed.xml" | url }}), or just drop
 by from time to time.

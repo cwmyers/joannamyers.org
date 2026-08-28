@@ -62,6 +62,9 @@ export default function (eleventyConfig) {
 
 	return {
 		dir: { input: "src", output: "_site" },
+		// Served at /joannamyers.org/ until the custom domain is live.
+		// At cutover, change this to "/" and redeploy.
+		pathPrefix: "/joannamyers.org/",
 		markdownTemplateEngine: "njk",
 		htmlTemplateEngine: "njk",
 	};

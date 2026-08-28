@@ -14,7 +14,7 @@ permalink: /
 	<h2 class="section-title">Latest posts</h2>
 	<div class="post-list">
 		{% for post in collections.posts | newestFirst | head(8) %}
-		<a class="post-card" href="{{ post.url }}">
+		<a class="post-card" href="{{ post.url | url }}">
 			<time datetime="{{ post.date | iso }}">{{ post.date | dateFmt }}</time>
 			<h3>{{ post.data.title }}</h3>
 			<p>{{ post.data.description }}</p>
@@ -22,5 +22,5 @@ permalink: /
 		</a>
 		{% endfor %}
 	</div>
-	<p class="more-link"><a href="/archive/">Browse the full archive →</a></p>
+	<p class="more-link"><a href="{{ "/archive/" | url }}">Browse the full archive →</a></p>
 </section>
