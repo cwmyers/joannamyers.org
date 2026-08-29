@@ -27,26 +27,32 @@
 <body>
 	<a class="skip-link" href="#main">Skip to content</a>
 
-	<header class="site-header">
-		<div class="wrap">
-			<a class="site-title" href="{{ "/" | url }}">{{ site.name }}</a>
-			<p class="site-tagline">Faith · Family · Life in all its colours</p>
-			<nav class="site-nav" aria-label="Main">
-				<a {% if page.url == "/" %}aria-current="page"{% endif %} href="{{ "/" | url }}">Home</a>
-				<a {% if page.url.startsWith("/archive") %}aria-current="page"{% endif %} href="{{ "/archive/" | url }}">Archive</a>
-				<a {% if page.url == "/about/" %}aria-current="page"{% endif %} href="{{ "/about/" | url }}">About</a>
-			</nav>
-		</div>
-	</header>
+	<div class="site">
+		<aside class="sidebar">
+			<div class="sidebar-inner">
+				<img class="sidebar-avatar" src="{{ "/images/portrait.jpeg" | url }}" alt="Joanna Myers" width="800" height="1066">
+				<a class="site-title" href="{{ "/" | url }}">{{ site.name }}</a>
+				<p class="site-tagline">Faith · Family · Life in all its colours</p>
+				<nav class="site-nav" aria-label="Main">
+					<a {% if page.url == "/" %}aria-current="page"{% endif %} href="{{ "/" | url }}">Home</a>
+					<a {% if page.url.startsWith("/archive") %}aria-current="page"{% endif %} href="{{ "/archive/" | url }}">Archive</a>
+					<a {% if page.url == "/about/" %}aria-current="page"{% endif %} href="{{ "/about/" | url }}">About</a>
+				</nav>
+				<a class="sidebar-rss" href="{{ "/feed.xml" | url }}">RSS feed</a>
+			</div>
+		</aside>
 
-	<main id="main" class="wrap">
-		{{ content | safe }}
-	</main>
+		<div class="content">
+			<main id="main" class="wrap">
+				{{ content | safe }}
+			</main>
 
-	<footer class="site-footer">
-		<div class="wrap">
-			<p>© {% year %} {{ site.author }} · <a href="{{ "/feed.xml" | url }}">RSS</a></p>
+			<footer class="site-footer">
+				<div class="wrap">
+					<p>© {% year %} {{ site.author }}</p>
+				</div>
+			</footer>
 		</div>
-	</footer>
+	</div>
 </body>
 </html>
