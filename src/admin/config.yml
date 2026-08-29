@@ -4,7 +4,7 @@ backend:
   branch: main
   # PKCE authentication: no server or secret needed.
   # Create a GitHub OAuth App (see README) and paste its Client ID here:
-  app_id: REPLACE_WITH_OAUTH_APP_CLIENT_ID
+  app_id: Ov23liI4M4wv54P78kM6
 
 locale: en
 site_url: https://www.joannamyers.org
