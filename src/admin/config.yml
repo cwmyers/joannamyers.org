@@ -24,10 +24,6 @@ collections:
     slug: "{{fields.title | slugify}}"
     summary: "{{title}} — {{date | date('DD MMM YYYY')}}"
     sortable_fields: [date, title]
-    view_filters:
-      - label: Posts with images
-        field: image
-        pattern: [".+"]
     fields:
       - label: Title
         name: title
