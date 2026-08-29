@@ -2,6 +2,9 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/css");
 	eleventyConfig.addPassthroughCopy("src/images");
 	eleventyConfig.addPassthroughCopy("src/favicon.svg");
+	// Decap CMS config: Eleventy consumes .yml as data — ignore it and copy verbatim
+	eleventyConfig.ignores.add("src/admin/config.yml");
+	eleventyConfig.addPassthroughCopy("src/admin/config.yml");
 	eleventyConfig.addPassthroughCopy("src/CNAME");
 
 	eleventyConfig.addFilter("dateFmt", (date) =>
