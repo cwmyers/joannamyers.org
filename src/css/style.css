@@ -20,6 +20,7 @@ html { font-size: 100%; }
 
 body {
 	margin: 0;
+	overflow-x: clip;
 	background: var(--bg);
 	color: var(--ink);
 	font-family: "Source Serif 4", Georgia, serif;
@@ -179,7 +180,25 @@ body {
 
 /* ---------- Home ---------- */
 
-.hero { text-align: center; padding: 3.5rem 0 1rem; }
+.hero {
+	position: relative;
+	z-index: 0;
+	text-align: center;
+	padding: 3.5rem 0 1rem;
+}
+
+/* Flowers as a soft watermark behind the title, faded at the edges */
+.hero::before {
+	content: "";
+	position: absolute;
+	inset: -1.5rem -4rem;
+	background: url("../images/flowers.jpeg") center 35% / cover no-repeat;
+	opacity: 0.1;
+	border-radius: 1rem;
+	z-index: -1;
+	-webkit-mask-image: radial-gradient(ellipse at center, black 35%, transparent 75%);
+	mask-image: radial-gradient(ellipse at center, black 35%, transparent 75%);
+}
 
 .hero-kicker {
 	color: var(--accent);
@@ -192,10 +211,10 @@ body {
 .hero-title {
 	font-family: "Damion", cursive;
 	font-weight: normal;
-	font-size: 3.2rem;
+	font-size: 3.8rem;
 	line-height: 1.15;
 	margin: 0.5rem 0 0.75rem;
-	background: linear-gradient(90deg, var(--accent), var(--gold), var(--plum), var(--teal));
+	background: linear-gradient(90deg, #962f1e, #ae7014, #58365c, #2d5050);
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
