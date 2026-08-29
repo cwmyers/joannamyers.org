@@ -17,7 +17,7 @@ permalink: /
 		<a class="post-card" href="{{ post.url | url }}">
 			<time datetime="{{ post.date | iso }}">{{ post.date | dateFmt }}</time>
 			<h3>{{ post.data.title }}</h3>
-			<p>{{ post.data.description }}</p>
+			<p>{{ post.data.description or (post.templateContent | excerpt(300)) }}</p>
 			<span class="read-more">Read post →</span>
 		</a>
 		{% endfor %}

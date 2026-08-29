@@ -38,11 +38,11 @@ def main():
         url = next(l["href"] for l in e["link"] if l["rel"] == "alternate")
         path = re.sub(r"^https?://[^/]+", "", url)  # /YYYY/MM/slug.html
 
-        # Description: first ~160 chars of plain text (tags stripped, entities decoded)
+        # Description: first ~300 chars of plain text (tags stripped, entities decoded)
         text = re.sub(r"<[^>]+>", " ", body)
         text = html.unescape(text)
         text = re.sub(r"\s+", " ", text).strip()
-        desc = text[:160].rsplit(" ", 1)[0] + "…" if len(text) > 160 else text
+        desc = text[:300].rsplit(" ", 1)[0] + "…" if len(text) > 300 else text
 
         frontmatter = (
             f"---\n"

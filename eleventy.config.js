@@ -41,6 +41,18 @@ export default function (eleventyConfig) {
 
 	eleventyConfig.addFilter("first", (arr) => arr[0]);
 
+	// Plain-text excerpt from post HTML, truncated at a word boundary.
+	eleventyConfig.addFilter("excerpt", (text, limit = 300) => {
+		const plain = String(text)
+			.replace(/<[^>]+>/g, " ")
+			.replace(/&[a-zA-Z#0-9]+;/g, " ")
+			.replace(/\s+/g, " ")
+			.trim();
+		return plain.length > limit
+			? plain.slice(0, limit).replace(/\s+\S*$/, "") + "…"
+			: plain;
+	});
+
 	eleventyConfig.addFilter("groupByYear", (posts) => {
 		const byYear = new Map();
 		for (const post of posts) {
