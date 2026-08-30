@@ -16,7 +16,7 @@ collections:
     label_singular: Post
     folder: src/posts
     create: true
-    format: md
+    format: yaml-frontmatter
     extension: md
     slug: "{{fields.title | slugify}}"
     summary: "{{title}} — {{date | date('DD MMM YYYY')}}"
