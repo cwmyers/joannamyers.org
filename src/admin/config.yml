@@ -2,7 +2,7 @@ backend:
   name: github
   repo: cwmyers/joannamyers.org
   branch: main
-  base_url: https://netlify-cms-github-oauth-provider-liard.vercel.app
+  base_url: https://joannamyers-oauth.vercel.app
 
 locale: en
 site_url: https://www.joannamyers.org
