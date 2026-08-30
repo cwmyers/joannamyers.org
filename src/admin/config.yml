@@ -31,8 +31,7 @@ collections:
         date_format: YYYY-MM-DD
         time_format: false
         format: YYYY-MM-DD
-        default_date: "{{now}}"
-        required: false
+        default: "{{now}}"
       - label: Categories
         name: tags
         widget: list
