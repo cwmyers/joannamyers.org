@@ -2,7 +2,6 @@ backend:
   name: github
   repo: cwmyers/joannamyers.org
   branch: main
-  site_domain: joannamyers.netlify.app
 
 locale: en
 site_url: https://www.joannamyers.org
